@@ -21,13 +21,8 @@
         android:label="fragment_explore"
         tools:layout="@layout/fragment_explore" />
     <fragment
-        android:id="@+id/historyFragment2"
-        android:name="com.example.paktravelnew.Fragments.HistoryFragment"
-        android:label="fragment_history"
-        tools:layout="@layout/fragment_history" />
-    <fragment
-        android:id="@+id/profileFragment2"
-        android:name="com.example.paktravelnew.Fragments.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/menuFragment"
+        android:name="com.example.paktravelnew.Fragments.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" />
 </navigation>

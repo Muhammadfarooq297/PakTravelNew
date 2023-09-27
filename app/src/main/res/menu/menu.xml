@@ -10,10 +10,8 @@
     <item android:title="Explore"
         android:id="@+id/exploreFragment"
         android:icon="@drawable/baseline_travel_explore_24"/>
-    <item android:title="History"
-        android:id="@+id/historyFragment2"
-        android:icon="@drawable/history"/>
-    <item android:title="Profile"
-        android:id="@+id/profileFragment2"
-        android:icon="@drawable/profile"/>
+    <item android:title="More"
+        android:id="@+id/menuFragment"
+        android:icon="@drawable/menu_icon"/>
+
 </menu>

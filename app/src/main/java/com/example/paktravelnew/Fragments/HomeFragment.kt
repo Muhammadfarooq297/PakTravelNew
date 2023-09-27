@@ -25,6 +25,10 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding=FragmentHomeBinding.inflate(layoutInflater,container,false)
+        binding.viewAllTours.setOnClickListener {
+            val bottomSheetDialog=TourBottomSheetFragment()
+            bottomSheetDialog.show(parentFragmentManager,"TEST")
+        }
         return binding.root
     }
 
@@ -56,7 +60,7 @@ class HomeFragment : Fragment() {
 //        })
 
         val foodNames= listOf("Hunza Valley Tour 2023-24 ","Skardu Valley Tour 2023-24"," Hunza Autumn Tour 2023-24","Hunza Cherry Blossom Tour")
-        val foodPrices= listOf("$999","$1700","$899","$1000")
+        val foodPrices= listOf("$999","$700","$899","$900")
         val foodImages= listOf(R.drawable.hunzavalley,R.drawable.skardu,R.drawable.cherry_blossum,R.drawable.hunzavalley)
         val adapter= PopularAdapter(foodNames,foodPrices,foodImages,requireContext())
         binding.popularRecyclerView.layoutManager=LinearLayoutManager(requireContext())

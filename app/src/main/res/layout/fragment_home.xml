@@ -55,10 +55,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:listitem="@layout/popularitem"
-        app:layout_constraintTop_toBottomOf="@+id/viewAllMenu" />
+        app:layout_constraintTop_toBottomOf="@+id/viewAllTours" />
 
     <TextView
-        android:id="@+id/viewAllMenu"
+        android:id="@+id/viewAllTours"
         android:layout_width="80dp"
         android:layout_height="25dp"
         android:layout_marginTop="16dp"
