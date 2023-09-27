@@ -46,6 +46,16 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/popularRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/popularitem"
+        app:layout_constraintTop_toBottomOf="@+id/viewAllMenu" />
 
     <TextView
         android:id="@+id/viewAllMenu"
@@ -56,7 +66,7 @@
         android:background="@drawable/textviewshape"
         android:elevation="5dp"
         android:gravity="center"
-        android:text="View Menu"
+        android:text="View Tours"
         android:textColor="@color/textColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />

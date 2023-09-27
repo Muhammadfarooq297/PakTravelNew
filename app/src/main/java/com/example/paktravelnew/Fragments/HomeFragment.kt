@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
+import com.example.paktravelnew.Adapters.PopularAdapter
 import com.example.paktravelnew.R
 import com.example.paktravelnew.databinding.FragmentHomeBinding
 
@@ -54,6 +55,12 @@ class HomeFragment : Fragment() {
 //
 //        })
 
+        val foodNames= listOf("Hunza Valley Tour 2023-24 ","Skardu Valley Tour 2023-24"," Hunza Autumn Tour 2023-24","Hunza Cherry Blossom Tour")
+        val foodPrices= listOf("$999","$1700","$899","$1000")
+        val foodImages= listOf(R.drawable.hunzavalley,R.drawable.skardu,R.drawable.cherry_blossum,R.drawable.hunzavalley)
+        val adapter= PopularAdapter(foodNames,foodPrices,foodImages,requireContext())
+        binding.popularRecyclerView.layoutManager=LinearLayoutManager(requireContext())
+        binding.popularRecyclerView.adapter=adapter
     }
     companion object {
 
