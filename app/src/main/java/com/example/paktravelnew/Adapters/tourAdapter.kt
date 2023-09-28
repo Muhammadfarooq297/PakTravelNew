@@ -5,6 +5,8 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.paktravelnew.DetailsActivity
+import com.example.paktravelnew.Fragments.TourBottomSheetFragment
 import com.example.paktravelnew.databinding.TourItemBinding
 
 class tourAdapter (private val menuItems:MutableList<String>,private val menuItemPrice:MutableList<String>,private val menuImages:MutableList<Int>,private val requireContext: Context):
@@ -18,7 +20,17 @@ class tourAdapter (private val menuItems:MutableList<String>,private val menuIte
     }
 
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
+        val item=menuItems[position]
+        val price=menuItemPrice[position]
+        val image=menuImages[position]
         holder.bind(position)
+        holder.itemView.setOnClickListener{
+            val intent= Intent(requireContext, DetailsActivity::class.java)
+            intent.putExtra("MenuItemName",item)
+            intent.putExtra("MenuItemImage",image)
+            requireContext.startActivity(intent)
+        }
+
     }
 
     override fun getItemCount(): Int =menuItems.size

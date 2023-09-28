@@ -18,6 +18,9 @@ class TourBottomSheetFragment : BottomSheetDialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+
+
     }
 
     override fun onCreateView(
@@ -34,8 +37,11 @@ class TourBottomSheetFragment : BottomSheetDialogFragment() {
         val adapter= tourAdapter(ArrayList(menuFoodNames),ArrayList(menuItemPrice),ArrayList(menuImage),requireContext())
         binding.menuRecyclerView.layoutManager= LinearLayoutManager(requireContext())
         binding.menuRecyclerView.adapter=adapter
+
         return binding.root
     }
+
+
 
     companion object {
 

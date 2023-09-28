@@ -5,6 +5,8 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.paktravelnew.DetailsActivity
+import com.example.paktravelnew.Fragments.TourBottomSheetFragment
 import com.example.paktravelnew.databinding.PopularitemBinding
 
 class PopularAdapter (private val items:List<String>,private val prices:List<String>, private val images:List<Int>,private val requireContext: Context) : RecyclerView.Adapter<PopularAdapter.PopularViewHolder>() {
@@ -18,12 +20,12 @@ class PopularAdapter (private val items:List<String>,private val prices:List<Str
         val price=prices[position]
         val image=images[position]
         holder.bind(item,price,image)
-//        holder.itemView.setOnClickListener{
-//            val intent= Intent(requireContext, DetailsActivity::class.java)
-//            intent.putExtra("MenuItemName",item)
-//            intent.putExtra("MenuItemImage",image)
-//            requireContext.startActivity(intent)
-//        }
+        holder.itemView.setOnClickListener{
+            val intent= Intent(requireContext, DetailsActivity::class.java)
+            intent.putExtra("MenuItemName",item)
+            intent.putExtra("MenuItemImage",image)
+            requireContext.startActivity(intent)
+        }
 
 
     }
