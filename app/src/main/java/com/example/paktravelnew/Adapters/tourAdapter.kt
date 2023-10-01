@@ -2,14 +2,18 @@ package com.example.paktravelnew.Adapters
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.paktravelnew.DetailsActivity
 import com.example.paktravelnew.Fragments.TourBottomSheetFragment
+import com.example.paktravelnew.Models.TourModel
 import com.example.paktravelnew.databinding.TourItemBinding
+import com.google.firebase.database.DatabaseReference
 
-class tourAdapter (private val menuItems:MutableList<String>,private val menuItemPrice:MutableList<String>,private val menuImages:MutableList<Int>,private val requireContext: Context):
+class tourAdapter (private val context: Context,private val tourList:ArrayList<TourModel>,databaseReference:DatabaseReference):
     RecyclerView.Adapter<tourAdapter.MenuViewHolder>() {
     private val itemClickListener: OnClickListener ?= null
 
@@ -20,20 +24,21 @@ class tourAdapter (private val menuItems:MutableList<String>,private val menuIte
     }
 
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
-        val item=menuItems[position]
-        val price=menuItemPrice[position]
-        val image=menuImages[position]
+
+        val tourItem=tourList[position]
+        val uriString=tourItem.tourImage
+//        val uri=Uri.parse(uriString)
         holder.bind(position)
         holder.itemView.setOnClickListener{
-            val intent= Intent(requireContext, DetailsActivity::class.java)
-            intent.putExtra("MenuItemName",item)
-            intent.putExtra("MenuItemImage",image)
-            requireContext.startActivity(intent)
+            val intent= Intent(context, DetailsActivity::class.java)
+            intent.putExtra("MenuItemName",tourItem.tourName)
+            intent.putExtra("MenuItemImage",uriString)
+            context.startActivity(intent)
         }
 
     }
 
-    override fun getItemCount(): Int =menuItems.size
+    override fun getItemCount(): Int =tourList.size
 
     inner class MenuViewHolder(private val binding:TourItemBinding): RecyclerView.ViewHolder(binding.root) {
 
@@ -55,9 +60,12 @@ class tourAdapter (private val menuItems:MutableList<String>,private val menuIte
 //        }
         fun bind(position: Int) {
             binding.apply {
-                foodNamePopular.text=menuItems[position].toString()
-                pricePopular.text=menuItemPrice[position].toString()
-                popularimageView.setImageResource(menuImages[position])
+                val tourItem=tourList[position]
+                val uriString=tourItem.tourImage
+                val uri=Uri.parse(uriString)
+                foodNamePopular.text=tourItem.tourName
+                pricePopular.text=tourItem.tourCost
+                Glide.with(context).load(uri).into(popularimageView)
 
 
 

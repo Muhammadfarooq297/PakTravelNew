@@ -1,8 +1,10 @@
 package com.example.paktravelnew
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bumptech.glide.Glide
 import com.example.paktravelnew.databinding.ActivityDetailsBinding
 
 class DetailsActivity : AppCompatActivity() {
@@ -13,9 +15,10 @@ class DetailsActivity : AppCompatActivity() {
         binding= ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val foodName=intent.getStringExtra("MenuItemName")
-        val foodImage=intent.getIntExtra("MenuItemImage",0)
+        val imageUri=intent.getStringExtra("MenuItemImage")
+        val uri= Uri.parse(imageUri)
         binding.detailFoodName.text=foodName
-        binding.DetailFoodImageView.setImageResource(foodImage)
+        Glide.with(this@DetailsActivity).load(uri).into(binding.DetailFoodImageView)
         binding.imageButton.setOnClickListener {
             finish()
         }
