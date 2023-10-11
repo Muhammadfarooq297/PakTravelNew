@@ -16,6 +16,12 @@
         android:theme="@style/Theme.PakTravelNew"
         tools:targetApi="31">
         <activity
+            android:name=".exploreVehiclesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vehicleDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".exploreRoomActivity"
             android:exported="false" />
         <activity

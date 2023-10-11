@@ -53,7 +53,7 @@
 
             <ImageView
                 android:id="@+id/DetailFoodImageView"
-                android:layout_width="wrap_content"
+                android:layout_width="352dp"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
                 tools:srcCompat="@tools:sample/backgrounds/scenic" />

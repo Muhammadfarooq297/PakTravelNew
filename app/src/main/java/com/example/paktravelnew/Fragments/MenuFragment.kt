@@ -12,6 +12,7 @@ import com.example.paktravelnew.databinding.FragmentHomeBinding
 import com.example.paktravelnew.databinding.FragmentMenuBinding
 import com.example.paktravelnew.exploreFoodActivity
 import com.example.paktravelnew.exploreRoomActivity
+import com.example.paktravelnew.exploreVehiclesActivity
 
 
 class MenuFragment : Fragment() {
@@ -32,6 +33,10 @@ class MenuFragment : Fragment() {
         }
         binding.addroomButton.setOnClickListener {
             val intent= Intent(requireContext(),exploreRoomActivity::class.java)
+            startActivity(intent)
+        }
+        binding.exploreVehicleButton.setOnClickListener {
+            val intent= Intent(requireContext(),exploreVehiclesActivity::class.java)
             startActivity(intent)
         }
         return binding.root
