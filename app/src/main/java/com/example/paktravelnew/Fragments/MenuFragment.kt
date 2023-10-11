@@ -11,6 +11,7 @@ import com.example.paktravelnew.R
 import com.example.paktravelnew.databinding.FragmentHomeBinding
 import com.example.paktravelnew.databinding.FragmentMenuBinding
 import com.example.paktravelnew.exploreFoodActivity
+import com.example.paktravelnew.exploreRoomActivity
 
 
 class MenuFragment : Fragment() {
@@ -27,6 +28,10 @@ class MenuFragment : Fragment() {
         binding=FragmentMenuBinding.inflate(layoutInflater,container,false)
         binding.explorefoodButton.setOnClickListener {
             val intent= Intent(requireContext(),exploreFoodActivity::class.java)
+            startActivity(intent)
+        }
+        binding.addroomButton.setOnClickListener {
+            val intent= Intent(requireContext(),exploreRoomActivity::class.java)
             startActivity(intent)
         }
         return binding.root
