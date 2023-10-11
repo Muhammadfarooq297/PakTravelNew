@@ -1,16 +1,16 @@
 package com.example.paktravelnew.Fragments
 
+import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
-import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
-import com.example.paktravelnew.Adapters.PopularAdapter
 import com.example.paktravelnew.Adapters.tourAdapter
 import com.example.paktravelnew.Models.TourModel
 import com.example.paktravelnew.R
@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import taimoor.sultani.sweetalert2.Sweetalert
 
 
 class HomeFragment : Fragment() {
@@ -44,6 +45,16 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        val pDialog = Sweetalert(requireContext(), Sweetalert.PROGRESS_TYPE)
+        pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"))
+        pDialog.setTitleText("Loading")
+        pDialog.setCancelable(false)
+        pDialog.show()
+
+        // Delay the dismissal of the dialog after 5 seconds
+        Handler(Looper.getMainLooper()).postDelayed({
+            pDialog.dismissWithAnimation()
+        }, 5000) // 5000 milliseconds = 5 seconds
         val imageList=ArrayList<SlideModel>()
         databaseReference = FirebaseDatabase.getInstance().reference
 
