@@ -1,42 +1,33 @@
-package com.example.paktravelnew.Fragments
+package com.example.paktravelnew
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import com.example.paktravelnew.R
-import com.example.paktravelnew.databinding.FragmentExploreBinding
+import android.os.Bundle
+
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.example.paktravelnew.databinding.ActivityMapsBinding
 
-
-class ExploreFragment  : Fragment(), OnMapReadyCallback {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
-    private lateinit var binding: FragmentExploreBinding
+private lateinit var binding: ActivityMapsBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentExploreBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+     binding = ActivityMapsBinding.inflate(layoutInflater)
+     setContentView(binding.root)
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        val mapFragment = childFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
+        val mapFragment = supportFragmentManager
+                .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -50,11 +41,8 @@ class ExploreFragment  : Fragment(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(32.93283637200666, 72.86329337004598)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Chakwal"))
+        val sydney = LatLng(-34.0, 151.0)
+        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 }
-
-
-
