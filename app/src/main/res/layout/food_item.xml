@@ -56,13 +56,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="34dp"
+                android:layout_marginEnd="50dp"
                 android:fontFamily="@font/lato_regular"
                 android:text="$5"
                 android:textColor="@color/textColor"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="Rs"
+                android:textColor="@color/textColor"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/pricePopular"
+                app:layout_constraintStart_toEndOf="@+id/pricePopular"
+                app:layout_constraintTop_toTopOf="@+id/pricePopular" />
 
             <TextView
                 android:id="@+id/addTocartPopular"

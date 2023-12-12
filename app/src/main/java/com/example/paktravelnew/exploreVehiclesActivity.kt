@@ -1,5 +1,6 @@
 package com.example.paktravelnew
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -44,6 +45,12 @@ class exploreVehiclesActivity : AppCompatActivity() {
 
         binding.imageButton.setOnClickListener {
             finish()
+        }
+        binding.viewmoreVehicles.setOnClickListener {
+//            val bottomSheetDialog=TourBottomSheetFragment()
+//            bottomSheetDialog.show(parentFragmentManager,"TEST")
+            val intent= Intent(this, viewVehiclesActivity::class.java)
+            startActivity(intent)
         }
         retrieveVehicleItem()
     }

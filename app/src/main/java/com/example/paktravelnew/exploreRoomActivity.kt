@@ -1,5 +1,6 @@
 package com.example.paktravelnew
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -44,6 +45,11 @@ class exploreRoomActivity : AppCompatActivity() {
 
         binding.imageButton.setOnClickListener {
             finish()
+        }
+        binding.viewmoreRooms.setOnClickListener {
+
+            val intent= Intent(this, viewRoomsActivity::class.java)
+            startActivity(intent)
         }
         retrieveRoomItem()
     }

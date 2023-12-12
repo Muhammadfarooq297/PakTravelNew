@@ -58,23 +58,30 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun createAccount(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener{task->
-            if(task.isSuccessful)
-            {
-                Toast.makeText(this, "Account created successfully.", Toast.LENGTH_SHORT).show()
-                saveUserData()
-                val intent= Intent(this,LogInActivity::class.java)
-
-                startActivity(intent)
-            }
-            else
-            {
-                Toast.makeText(this, "Account creation failed.", Toast.LENGTH_SHORT).show()
-            }
-
+        // Add checks for name and password
+        userName = binding.name.text.toString().trim()
+        if (userName.contains(Regex("\\d"))) {
+            Toast.makeText(this, "Name should not include digits.", Toast.LENGTH_SHORT).show()
+            return
         }
 
+        if (password.length < 6 || !password.contains(Regex("[!@#\$%^&*(),.?\":{}|<>]"))) {
+            Toast.makeText(this, "Password must be 6+ characters and include special characters.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                Toast.makeText(this, "Account created successfully.", Toast.LENGTH_SHORT).show()
+                saveUserData()
+                val intent = Intent(this, LogInActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Account creation failed.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
+
 
     // saving data in to firebase
     private fun saveUserData() {

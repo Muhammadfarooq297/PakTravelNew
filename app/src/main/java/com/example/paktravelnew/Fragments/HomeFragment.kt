@@ -1,5 +1,6 @@
 package com.example.paktravelnew.Fragments
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
@@ -12,9 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.paktravelnew.Adapters.tourAdapter
+import com.example.paktravelnew.BookingTourActivity
 import com.example.paktravelnew.Models.TourModel
 import com.example.paktravelnew.R
 import com.example.paktravelnew.databinding.FragmentHomeBinding
+import com.example.paktravelnew.tourPackagesActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -37,8 +40,10 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding=FragmentHomeBinding.inflate(layoutInflater,container,false)
         binding.viewAllTours.setOnClickListener {
-            val bottomSheetDialog=TourBottomSheetFragment()
-            bottomSheetDialog.show(parentFragmentManager,"TEST")
+//            val bottomSheetDialog=TourBottomSheetFragment()
+//            bottomSheetDialog.show(parentFragmentManager,"TEST")
+            val intent= Intent(requireContext(), tourPackagesActivity::class.java)
+            startActivity(intent)
         }
         return binding.root
     }
