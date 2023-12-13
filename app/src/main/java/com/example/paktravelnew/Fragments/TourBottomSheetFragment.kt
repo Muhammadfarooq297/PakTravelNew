@@ -62,7 +62,6 @@ class TourBottomSheetFragment : BottomSheetDialogFragment() {
 
                 setAdapter()
             }
-
             override fun onCancelled(error: DatabaseError) {
                 // Handle onCancelled if needed
             }

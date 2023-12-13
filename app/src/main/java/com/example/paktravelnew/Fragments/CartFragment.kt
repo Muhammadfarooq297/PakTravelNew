@@ -87,4 +87,5 @@ class CartFragment : Fragment() {
         binding.placesRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.placesRecyclerView.adapter = adapter
     }
+
 }

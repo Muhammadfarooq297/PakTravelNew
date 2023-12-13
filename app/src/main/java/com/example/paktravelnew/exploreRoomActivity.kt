@@ -51,6 +51,7 @@ class exploreRoomActivity : AppCompatActivity() {
             val intent= Intent(this, viewRoomsActivity::class.java)
             startActivity(intent)
         }
+
         retrieveRoomItem()
     }
     private fun retrieveRoomItem() {

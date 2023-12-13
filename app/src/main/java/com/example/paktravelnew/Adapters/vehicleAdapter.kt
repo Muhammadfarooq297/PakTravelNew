@@ -38,7 +38,6 @@ class vehicleAdapter (private val context: Context, private val vehicleList: Arr
         }
     }
 
-
     override fun getItemCount(): Int = vehicleList.size
 
     inner class MenuViewHolder(private val binding: VehicleItemBinding) :

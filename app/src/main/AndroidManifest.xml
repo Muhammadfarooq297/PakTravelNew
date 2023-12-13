@@ -19,9 +19,6 @@
         android:theme="@style/Theme.PakTravelNew"
         tools:targetApi="31">
         <activity
-            android:name=".a1Activity"
-            android:exported="false" />
-        <activity
             android:name=".viewRoomsActivity"
             android:exported="false" />
         <activity

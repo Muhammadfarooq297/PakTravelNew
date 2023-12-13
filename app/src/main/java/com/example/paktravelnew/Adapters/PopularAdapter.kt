@@ -19,7 +19,6 @@ class PopularAdapter (private val context: Context, private val tourList:ArrayLi
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopularViewHolder {
         return PopularViewHolder(PopularitemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
-
     override fun onBindViewHolder(holder: PopularViewHolder, position: Int) {
         val tourItem=tourList[position]
         val uriString=tourItem.tourImage
