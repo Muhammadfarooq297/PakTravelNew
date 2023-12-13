@@ -23,7 +23,6 @@ class roomAdapter (private val context: Context, private val roomList: ArrayList
         val binding = RoomItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MenuViewHolder(binding)
     }
-
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
 
         val roomItem=roomList[position]

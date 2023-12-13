@@ -31,4 +31,5 @@ class viewVehiclesActivity : AppCompatActivity() {
         // the default system behavior. Probably exit the activity.
         return super.onKeyDown(keyCode, event)
     }
+
 }

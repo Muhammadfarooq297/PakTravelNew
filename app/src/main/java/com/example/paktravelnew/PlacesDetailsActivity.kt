@@ -25,7 +25,6 @@ class PlacesDetailsActivity : AppCompatActivity() {
         binding.imageButton.setOnClickListener {
             finish()
         }
-
         binding.buttonBook.setOnClickListener {
             val intent= Intent(this,CartFragment::class.java)
             startActivity(intent)

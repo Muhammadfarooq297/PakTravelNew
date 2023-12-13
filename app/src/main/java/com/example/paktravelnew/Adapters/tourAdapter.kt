@@ -22,7 +22,6 @@ class tourAdapter (private val context: Context,private val tourList:ArrayList<T
         val binding=TourItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return MenuViewHolder(binding)
     }
-
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
 
         val tourItem=tourList[position]

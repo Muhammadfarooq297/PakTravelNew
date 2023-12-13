@@ -18,7 +18,6 @@ import com.google.firebase.database.DatabaseReference
 class foodAdapter(private val context: Context, private val foodList: ArrayList<foodModel>, databaseReference: DatabaseReference):
     RecyclerView.Adapter<foodAdapter.MenuViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
         val binding = FoodItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MenuViewHolder(binding)

@@ -29,5 +29,6 @@ class roomDetailsActivity : AppCompatActivity() {
             val intent= Intent(this,BookingTourActivity::class.java)
             startActivity(intent)
         }
+
     }
 }

@@ -93,6 +93,7 @@ class HomeFragment : Fragment() {
 //        val adapter= PopularAdapter(foodNames,foodPrices,foodImages,requireContext())
 //        binding.popularRecyclerView.layoutManager=LinearLayoutManager(requireContext())
 //        binding.popularRecyclerView.adapter=adapter
+
     }
 
     private fun retrieveTourItem() {

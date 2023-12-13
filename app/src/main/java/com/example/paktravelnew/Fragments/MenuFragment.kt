@@ -41,7 +41,6 @@ class MenuFragment : Fragment() {
         }
         return binding.root
     }
-
     companion object {
 
     }

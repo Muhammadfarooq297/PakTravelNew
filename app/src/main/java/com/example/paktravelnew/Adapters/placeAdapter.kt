@@ -24,6 +24,7 @@ class placeAdapter (private val context: Context, private val placeList: ArrayLi
         return MenuViewHolder(binding)
     }
 
+
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
 
         val placeItem=placeList[position]
