@@ -9,6 +9,7 @@ import com.example.paktravelnew.databinding.ActivityBookingTourBinding
 class BookingTourActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBookingTourBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding= ActivityBookingTourBinding.inflate(layoutInflater)
         setContentView(binding.root)

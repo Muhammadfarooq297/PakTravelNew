@@ -79,4 +79,5 @@ class exploreFoodActivity : AppCompatActivity() {
         binding.fooditemsRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.fooditemsRecyclerView.adapter = adapter
     }
+
 }

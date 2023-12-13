@@ -46,6 +46,7 @@ class exploreVehiclesActivity : AppCompatActivity() {
         binding.imageButton.setOnClickListener {
             finish()
         }
+
         binding.viewmoreVehicles.setOnClickListener {
 //            val bottomSheetDialog=TourBottomSheetFragment()
 //            bottomSheetDialog.show(parentFragmentManager,"TEST")
